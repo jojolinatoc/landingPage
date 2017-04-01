@@ -1,12 +1,299 @@
 #{extends 'main.html' /}
 #{set title:'- encuesta oficial' /}
 
+<!-------------------- I DID NOT SUBMIT THE FORM IT IS JUST STATIC ------------------->
 <div class="content">
-    <h2>Estimado/a visitante de : </h2>
-    <p>
-        Danos tu opinión sobre este cuestionario de 30 segundos de y, a modo de agradecimiento, podrás disfrutar de exclusivas ofertas « gratuitas ». Disponible hoy solamente: sábado, den abril 1, 2017
-    </p>
-    <h2>Pregunta 1 de 4: ¿Cuál es tu género?</h2>
-    <input type="radio" name="gender" value="macho"> macho<br>
-    <input type="radio" name="gender" value="femenino"> femenino<br>
+   <section class="first">
+       <h2>Estimado/a visitante de : </h2>
+       <p>
+           Danos tu opinión sobre este cuestionario de 30 segundos de  <strong></strong> y, a modo de agradecimiento, podrás disfrutar de exclusivas ofertas « gratuitas ». Disponible hoy solamente: <script language="JavaScript" type="text/javascript">
+           // Array of day names
+           var dayNames = new Array("domingo","lunes","martes","miércoles","jueves","viernes","sábado");
+           // Array of month Names
+           var monthNames = new Array("enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre");
+           var now = new Date();
+           now.setDate(now.getDate() );
+           document.write(dayNames[now.getDay()] + ", den " +monthNames[now.getMonth()] + " " +(now.getDate()) + ", " + now.getFullYear());// -->
+
+       </script>
+
+       </p>
+       <h2>Pregunta 1 de 4: ¿Cuál es tu género?</h2>
+       <input type="radio" class="first-opt" name="gender" value="macho"> macho<br>
+       <input type="radio" class="first-opt" name="gender" value="femenino"> femenino<br>
+   </section>
+
+    <section class="second">
+        <h2>¿Con qué frecuencia visitas ? </h2>
+        <input type="radio" class="second-opt" name="visitas" value="a menudo"> a menudo<br>
+        <input type="radio" class="second-opt" name="visitas" value="no muy a menudo"> no muy a menudo<br>
+        <input type="radio" class="second-opt" name="visitas" value="nunca"> nunca<br>
+    </section>
+
+    <section class="third">
+        <h2>Pregunta 3 de 4: ¿Desde dónde estás visitando este sitio?</h2>
+        <input type="radio" class="third-opt" name="pregunta" value="trabajo"> trabajo<br>
+        <input type="radio" class="third-opt" name="pregunta" value="casa"> casa<br>
+        <input type="radio" class="third-opt" name="pregunta" value="otro"> otro<br>
+    </section>
+
+    <section class="fourth">
+        <h2>Pregunta 4 de 4: ¿Cuántos años tienes?</h2>
+        <input type="radio" class="fourth-opt" name="tienes" value="18-25"> 18-25<br>
+        <input type="radio" class="fourth-opt" name="tienes" value="25-35"> 25-35<br>
+        <input type="radio" class="fourth-opt" name="tienes" value="35-45"> 35-45<br>
+        <input type="radio" class="fourth-opt" name="tienes" value="45-55"> 45-55<br>
+        <input type="radio" class="fourth-opt" name="tienes" value="55+"> 55+<br>
+    </section>
+
+    <section id="searching">
+        <br><br>
+        <b>¡Ya está, eso es todo! Gracias por tu participación</b><br><br>
+        Como agradecimiento por someterte a las preguntas de nuestra encuesta, verificaremos nuestro inventario para ver si te podemos ofrecer un regalo.
+        <br><br><br><br>
+
+        <span id='submit1'>Envía tus respuestas:</span>
+        <span id='submit2' style='display: none;'>Envía tus respuestas:</span>
+        <span id='submit3' style='display: none;'>Código de verificación de inventario:</span>
+
+
+
+        <div style='float: left;' id='thebar1'><script type="text/javascript">var bar1 = createBar(200,8,'white',1,'grey','0055ac',30,25,1,"");</script></div>
+        <div style='float: left; display: none;' id='thebar2'><script type="text/javascript">var bar2 = createBar(200,8,'white',1,'grey','0055ac',30,25,1,"close2();");</script></div>
+        <div style='float: left; display: none;' id='thebar3'><script type="text/javascript">var bar3 = createBar(200,8,'white',1,'grey','0055ac',50,25,1,"close3();");</script></div>
+
+        <br><br><br><br><br>
+
+
+        <script>
+            bar2.togglePause();
+            bar2.hideBar();
+            bar3.togglePause();
+            bar3.hideBar();
+
+
+            function close1 ( ) {
+                bar1.hideBar();
+                bar1.togglePause();
+                document.getElementById('submit1').style.display = 'none';
+                document.getElementById('submit2').style.display = 'inline';
+                document.getElementById('thebar1').style.display = 'none';
+                document.getElementById('thebar2').style.display = 'inline';
+                bar2.showBar();
+                bar2.togglePause();
+            }
+            function close2 ( ) {
+                bar2.hideBar();
+                bar2.togglePause();
+                document.getElementById('submit2').style.display = 'none';
+                document.getElementById('submit3').style.display = 'inline';
+                document.getElementById('thebar2').style.display = 'none';
+                document.getElementById('thebar3').style.display = 'inline';
+                bar3.showBar();
+                bar3.togglePause();
+            }
+            function close3 ( ) {
+                bar3.togglePause();
+                document.getElementById('submit3').style.display = 'none';
+                document.getElementById('thebar3').style.display = 'none';
+                document.getElementById('searching').style.display = 'none';
+                document.getElementById('gift1').style.display = 'inline';
+                document.getElementById('paginate1').style.display = "inline";
+                document.getElementById("terms").style.display="inline";
+
+            }
+
+            function page1 ( ) {
+                document.getElementById('gift1').style.display = "inline";
+                document.getElementById('gift2').style.display = "none";
+                document.getElementById('paginate2').style.display = "none";
+                document.getElementById('paginate1').style.display = "inline";
+
+            }
+            function page2 ( ) {
+                document.getElementById('gift1').style.display = "none";
+                document.getElementById('gift2').style.display = "inline";
+                document.getElementById('paginate1').style.display = "none";
+                document.getElementById('paginate2').style.display = "inline";
+
+            }
+
+
+
+        </script>
+    </section>
+
+    <section>
+        <div class="question" id="gift1" style="display: none;">
+            <h1 style="color: rgb(0, 51, 102);"></h1>
+            <strong>Te proponemos las siguientes ofertas especiales por tu participación.</strong>
+            Puedes elegir solo un (<span style="color: red; font-weight: bold;"><strong>1</strong></span>) producto de la lista inferior. ¡Gracias por participar en nuestra encuesta! Disponible hoy solamente:
+
+
+
+
+            <br>
+            <br>
+
+
+
+
+            <div>
+                <table style="border:0" cellspacing="0" cellpadding="6">
+                    <tbody>
+
+                    <!-- BEGIN OFFER 1 -->
+                    <!-- <tr id="gift1" onclick="fn_submit();">
+                                                <td><img src="http://claimrewardsnow.com/test/es/264/index_files/dietlady.jpg" id="iphone"></td>
+                                                <td class="mid"><strong><small>Diet- Green Coffee &copy;<br></strong>Prix courant €89,85 <br> Le vôtre est: <strong><font color="#008000">gratis*</font></strong><br>Ne payez que les frais d'expédition: <strong>€ 4,95 </strong><br>Cantidad disponible: (<font color="#FF0000"><strong>1</strong></font>)<br></small></td>
+
+
+<td class="right"><form method="post" name="form1" id="form1" target="_blank" action="http://trackingdomain.com/base2.php?id=4">
+<input value="*Selecciona el regalo*" type="submit" class="button"></form>
+
+<font style="font-size:12px;"><span style="background-color: yellow; font-weight: bold;">"<strong></strong>"</span><br>cupón de descuento<br></font></td>
+
+						</tr>
+                        <tr><td style="margin:0; padding:0;" colspan="3"><hr style="margin-top:1px; margin-bottom:-5px;" size="1" /></td></tr> -->
+
+
+
+                    <!-- BEGIN OFFER 2 -->
+
+                    <tr id="gift2" onclick="fn_submit2();">
+
+                        <td><img src="http://claimrewardsnow.com/test/es/264/index_files/ecig.jpg"></td>
+
+                        <td class="mid"><strong><small>cigarrillos electrónicos &copy;<br>
+                        </strong>Precio regular €119,85 <br>
+                            Su precio: <strong><font color="#008000">gratis*</font></strong><br>
+                            Sólo pagar el envío: <strong>€ 5,99 </strong><br>
+
+                            Cantidad disponible: (<font color="#FF0000"><strong>3</strong></font>)<br></small></td>
+                        <td class="right"><form method="post" name="form2" id="form2" target="_blank" action="http://trackingdomain.com/base2.php?id=4"><input value="*Selecciona el regalo*" type="submit" class="button"></form><font style="font-size:12px;"><span style="background-color: yellow; font-weight: bold;">"<strong></strong>"</span><br>cupón de descuento<br></font></td>
+                    </tr>
+                    <tr><td style="margin:0; padding:0;" colspan="3"><hr style="margin-top:-3px; margin-bottom:-5px;" size="1" /></td></tr>
+
+
+                    <!-- BEGIN OFFER 3 -->
+
+                    <tr id="gift2" onclick="fn_submit2();">
+
+                        <td><img src="http://claimrewardsnow.com/test/es/264/index_files/tablet2.png"></td>
+
+                        <td class="mid"><strong><small>Android Tablet &copy;<br></strong>
+                            Usa tus habilidades para ganar productos<br>
+                            Su precio: <strong><font color="#008000">&euro; 1</font></strong> </strong><br>
+                            Cantidad disponible: (<font color="#FF0000"><strong>1</strong></font>)<br></small></td>
+                        <td class="right"><form method="post" name="form2" id="form2" target="_blank" action="http://trackingdomain.com/base2.php?id=7"><input value="*Selecciona el regalo*" type="submit" class="button"></form><font style="font-size:12px;"><span style="background-color: yellow; font-weight: bold;">"<strong></strong>"</span><br>cupón de descuento<br></font></td>
+                    </tr>
+                    <tr><td style="margin:0; padding:0;" colspan="3"><hr style="margin-top:-3px; margin-bottom:-5px;" size="1" /></td></tr>
+
+
+                    <!-- BEGIN OFFER 4 -->                             						<tr id="gift2" onclick="fn_submit2();">
+
+                        <td><img src="http://claimrewardsnow.com/test/es/264/index_files/nikon.jpg"></td>
+
+                        <td class="mid"><strong><small><br>Nikon Coolpix L27 ©<br>
+                        </strong>Usa tus habilidades para ganar productos<br>
+                            Su precio: <strong><font color="#008000">&euro; 1</font></strong> </strong><br>
+                            Cantidad disponible: (<font color="#FF0000"><strong>2</strong></font>)<br></small></td>
+                        <td class="right"><form method="post" name="form2" id="form2" target="_blank" action="http://trackingdomain.com/base2.php?id=2"><input value="*Selecciona el regalo*" type="submit" class="button"></form><font style="font-size:12px;"><span style="background-color: yellow; font-weight: bold;">"<strong></strong>"</span><br>cupón de descuento<br></font></td>
+                    </tr>
+                    <tr><td style="margin:0; padding:0;" colspan="3"><hr style="margin-top:-3px; margin-bottom:-5px;" size="1" /></td></tr>
+
+                    <!-- BEGIN OFFER 5 -->
+
+
+                    <tr id="gift2" onclick="fn_submit2();">
+
+                        <td><img src="http://claimrewardsnow.com/test/es/264/index_files/wrinkelady.jpg"></td>
+                        <td class="mid"><strong><small><br>Pur Essance&copy; - La reducción de arrugas avanzada y la prevención<br>
+                        </strong>Precio regular: €99,85<br>
+                            Su precio: <strong><font color="#008000">gratis*</font></strong> </strong><br>
+                            Sólo pagar el envío: <strong>€ 2,99 </strong><br>
+
+                            Cantidad disponible: (<font color="#FF0000"><strong>2</strong></font>)<br></small></td>
+
+                        <td class="right"><form method="post" name="form2" id="form2" target="_blank" action="http://trackingdomain.com/base2.php?id=5"><input value="*Selecciona el regalo*" type="submit" class="button"></form><font style="font-size:12px;"><span style="background-color: yellow; font-weight: bold;">"<strong></strong>"</span><br>cupón de descuento<br></font></td>
+                    </tr>
+                    <tr><td style="margin:0; padding:0;" colspan="3"><hr style="margin-top:-3px; margin-bottom:-5px;" size="1" /></td></tr>
+
+
+                    <!-- END OFFERS -->
+                    </tbody></table>
+            </div>
+
+        </div>
+
+
+
+        <div class="question" id="gift2" style="display: none;">
+            <br>
+            <b>We have the following products available to give you as an exclusive gift for your participation.</b> You may choose only (<span style="color: red;">1</span>) product from the list below. Thank you for participating in our survey!<br>
+
+
+            <div style="width: 540px;">
+
+                <table style="" width="650" border="0" bordercolor="#80ada6" cellpadding="10" cellspacing="0" rules="rows" class="question">
+
+                    <tbody>
+
+
+                    <tr>
+
+                        <td width="100"><a href="http://trackingdomain.com/base2.php?id=1" Kohls="_blank"><img src="http://claimrewardsnow.com/test/es/264/index_files/ipad.gif"></td>
+                        <td width="200"><b>Deal Fun:</br>iPads and More - Up to 95% Off</b><br>
+                            <span style="color: red; font-weight: bold;"></span>Regular Price: $599.99<br>Your Price: <span style="color: red; font-weight: bold;">As Low as $40.80!*</span><br></span><br>
+
+                        </td>
+                        <td width="200"><form>
+
+                            <script type="text/javascript">
+
+                                document.write("<input type=\"button\" value=\"Click Here To Choose This\" onclick=\"window.open('offers/penny.php");
+                                document.write(name);
+                                document.write("')\">");
+                            </script>
+
+
+                        </form></td>
+                    </tr>
+
+                    </tbody></table>
+
+
+
+
+            </div>
+
+        </div>
+
+        <div style='font-size: 14px;display: none;' id='paginate1'><center>page 1 | <a href="#" onclick='page2(); return false;'></a></center></div>
+        <div style='font-size: 14px;display: none;' id='paginate2'><center><a href="#" onclick='page1(); return false;'>page 1</a></center></div>
+
+    </section>
 </div>
+
+<script>
+
+    $(document).ready(function(){
+        $('.first-opt').click(function(){
+           $('.first').hide();
+           $('.second').show();
+        });
+        $('.second-opt').click(function(){
+            $('.second').hide();
+            $('.third').show();
+        });
+        $('.third-opt').click(function(){
+            $('.third').hide();
+            $('.fourth').show();
+        });
+        $('.fourth-opt').click(function(){
+            $('.fourth').hide();
+            close1();
+            $('#searching').show();
+        });
+    });
+</script>

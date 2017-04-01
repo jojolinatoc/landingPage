@@ -38,7 +38,7 @@ footer{
     border-top:solid 1px #555;
     text-align:center;
     width:650px;
-    margin:93px auto 0 auto;
+    margin:6px auto 0 auto;
 }
 footer p{
     font-size:11px;
@@ -48,7 +48,22 @@ footer p{
 footer a{
     color:blue;
 }
-
+.first{
+    margin-bottom:80px;
+}
+.second{
+    display:none;
+    margin-bottom:80px;
+}.third{
+    display:none;
+     margin-bottom:80px;
+}.fourth{
+    display:none;
+      margin-bottom:80px;
+}#searching{
+    display:none;
+       margin-bottom:80px;
+}
 .jquery-msgbox
 {
     background:url(/public/images/background.png) repeat-x left bottom;
