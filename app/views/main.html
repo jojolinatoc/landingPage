@@ -45,17 +45,7 @@
                 $.msgbox('<strong>Estimado/a visitante de :</strong><br /><br /> ¡Enhorabuena! Te hemos seleccionado para participar en una encuesta anónima de <b></b>. <br /><br />Al concluirla, se te ofrecerá un regalo exclusivo por tu participación.');
             });
         </script>
-        <script type="text/javascript">
-            var message="Sorry, right-click has been disabled";
-            function clickIE() {if (document.all) {(message);return false;}}
-            function clickNS(e) {if
-                    (document.layers||(document.getElementById&&!document.all)) {
-                if (e.which==2||e.which==3) {(message);return false;}}}
-            if (document.layers)
-            {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
-            else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
-            document.oncontextmenu=new Function("return false")
-        </script>
+
         <input type="hidden" id="hidLocation" value="http://trackingdomain.com/" />
         <script type="text/javascript" src="http://trackingdomain.com/landing.js"></script>
 
