@@ -1,0 +1,129 @@
+html, body{
+    margin:0;
+    padding:0;
+    font-family:Arial;
+    height:100%;
+}
+.wrapper{
+    width:840px;
+    margin:0 auto;
+}
+header{
+    width:840px;
+    height:128px;
+    background-image:url(/public/images/yellowESheader.png);
+    text-align:center;
+}
+header h1{
+    color: #bbbbbb;
+    font: 20px 'Verdana';
+    text-decoration: none;
+    font-weight: normal;
+    letter-spacing: -1px;
+    position: relative;
+    left: -25px;
+    top: 15px;
+}
+.content{
+    width:540px;
+    margin:38px auto 0 auto;
+}
+.content h2{
+    font-size:17px;
+}
+.content p{
+    font-size:17px;
+}
+footer{
+    border-top:solid 1px #555;
+    text-align:center;
+    width:650px;
+    margin:93px auto 0 auto;
+}
+footer p{
+    font-size:11px;
+    color:#555;
+    margin:17px 13px 0 14px;
+}
+footer a{
+    color:blue;
+}
+
+.jquery-msgbox
+{
+    background:url(/public/images/background.png) repeat-x left bottom;
+    padding-bottom:55px;
+    font-style:normal;
+}
+
+.jquery-msgbox-wrapper
+{
+    padding:20px 20px 20px 100px;
+}
+
+.jquery-msgbox-buttons
+{
+    padding:15px;
+    text-align:right;
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+.jquery-msgbox-buttons button,
+.jquery-msgbox-buttons input
+{
+    margin-left:10px;
+    min-width:85px;
+    padding:0 14px 2px;
+    height:24px;
+    cursor:pointer;
+}
+
+.jquery-msgbox-inputs
+{
+    margin-top:4px;
+}
+
+.jquery-msgbox-inputs input
+{
+    display:block;
+    padding:3px 2px;
+    border:1px solid #dddddd;
+    margin:3px 0 6px 0;
+    width:95%;
+}
+
+.jquery-msgbox-label
+{
+    font-weight:bold;
+    font-size:11px;
+}
+
+.jquery-msgbox-alert
+{
+    background: url('/public/images/question.png') no-repeat 20px 20px;
+    background-size:60px 60px;
+}
+
+.jquery-msgbox-info
+{
+    background: url(img/info.png) no-repeat 20px 20px;
+
+}
+
+.jquery-msgbox-error
+{
+    background: url(img/error.png) no-repeat 20px 20px;
+}
+
+.jquery-msgbox-prompt
+{
+    background: url('/public/images/question.png') no-repeat 20px 20px;
+    background-size:60px 60px;
+}
+
+.jquery-msgbox-confirm
+{
+    background: url(img/confirm.png) no-repeat 20px 20px;
+}

