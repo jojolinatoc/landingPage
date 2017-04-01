@@ -6,11 +6,28 @@
         <meta charset="${_response_encoding}">
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
         #{get 'moreStyles' /}
-        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/topicon.icon'}">
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700%7CDroid+Serif:400,700' rel='stylesheet' type='text/css'>
+
         <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         #{get 'moreScripts' /}
     </head>
     <body>
+        <header>
+
+        </header>
+
         #{doLayout /}
+
+        <footer>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="165" height="38" id="niftyPlayer1" align="">
+                <param name=movie value="niftyplayer.swf?file=http://claimrewardsnow.com/test/es/264/index_files/tw.mp3&amp;as=1">
+                <param name=quality value=high>
+                <param name=bgcolor value=#FFFFFF>
+                <embed src="niftyplayer.swf?file=http://claimrewardsnow.com/test/es/264/index_files/tw.mp3&amp;as=1" quality=high bgcolor=#FFFFFF width="165" height="38" name="niftyPlayer1" align="" type="application/x-shockwave-flash" pluginspage="https://www.macromedia.com/go/getflashplayer">
+                </embed>
+            </object>
+
+        </footer>
     </body>
 </html>
