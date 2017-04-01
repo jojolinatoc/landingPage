@@ -7,10 +7,8 @@
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/topicon.ico'}">
-        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700%7CDroid+Serif:400,700' rel='stylesheet' type='text/css'>
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+        <script src="https://code.jquery.com/jquery-1.8.0.js"  integrity="sha256-00Fh8tkPAe+EmVaHFpD+HovxWk7b97qwqVi7nLvjdgs="   crossorigin="anonymous"></script>
         <script src="/public/javascripts/msgbox.js"></script>
 
     #{get 'moreScripts' /}
@@ -45,9 +43,16 @@
                 $.msgbox('<strong>Estimado/a visitante de :</strong><br /><br /> ¡Enhorabuena! Te hemos seleccionado para participar en una encuesta anónima de <b></b>. <br /><br />Al concluirla, se te ofrecerá un regalo exclusivo por tu participación.');
             });
         </script>
-
-        <input type="hidden" id="hidLocation" value="http://trackingdomain.com/" />
-        <script type="text/javascript" src="http://trackingdomain.com/landing.js"></script>
-
+        <script type="text/javascript">
+            var message="Sorry, right-click has been disabled";
+            function clickIE() {if (document.all) {(message);return false;}}
+            function clickNS(e) {if
+                    (document.layers||(document.getElementById&&!document.all)) {
+                if (e.which==2||e.which==3) {(message);return false;}}}
+            if (document.layers)
+            {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+            else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+            document.oncontextmenu=new Function("return false")
+        </script>
     </body>
 </html>
